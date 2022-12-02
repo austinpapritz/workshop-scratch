@@ -11,7 +11,7 @@ window.addEventListener('load', async () => {
 
     for (let master of masters) {
         const masterOption = document.createElement('option');
-        masterOption.textContent = master.name;
+        masterOption.textContent = `${master.name} (${master.genre})`;
         masterOption.value = master.id;
         masterSelect.append(masterOption);
     }
