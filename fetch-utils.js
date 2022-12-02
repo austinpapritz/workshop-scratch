@@ -29,6 +29,11 @@ export async function signOutUser() {
 
 /* Data functions */
 
+export async function deleteMember(id) {
+    const response = await client.from('vocal_members').delete().match({ id: id }).single();
+    return checkError(response);
+}
+
 export async function createMember(member, master) {
     const response = await client.from('vocal_members').insert({ name: member, master_id: master });
     console.log(response, 'member response');
