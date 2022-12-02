@@ -29,6 +29,12 @@ export async function signOutUser() {
 
 /* Data functions */
 
+export async function createMember(member, master) {
+    const response = await client.from('vocal_members').insert({ name: member, master_id: master });
+    console.log(response, 'member response');
+    return checkError(response);
+}
+
 export async function fetchMasters() {
     const response = await client.from('vocal_masters').select('*, vocal_members(*)');
     return checkError(response);

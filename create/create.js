@@ -1,6 +1,6 @@
 // Add members
 
-import { fetchMasters } from '../fetch-utils.js';
+import { createMember, fetchMasters } from '../fetch-utils.js';
 
 // DOM
 const masterSelect = document.querySelector('#master-select');
@@ -24,4 +24,8 @@ form.addEventListener('submit', async (e) => {
     const data = new FormData(form);
     const name = data.get('member-name');
     const master = data.get('master-id');
+
+    await createMember(name, master);
+    form.reset();
+    window.location.href = '../';
 });
