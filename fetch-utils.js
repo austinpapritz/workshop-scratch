@@ -31,6 +31,9 @@ export async function signOutUser() {
 
 export async function fetchMasters() {
     const response = await client.from('vocal_masters').select('*, vocal_members(*)');
-    console.log(response, 'masters');
-    return response;
+    return checkError(response);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
 }
