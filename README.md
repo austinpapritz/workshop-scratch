@@ -1,26 +1,47 @@
-## The Golden Rule:
+## README
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+![wireframe](/assets/wireframe.png)
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+## ORDER OF OPERATIONS
 
-## Making a plan
+    • sign up, sign in (redirect to create)
+    • CREATE PAGE: adding member to a master class (on submit, redirect to masterclass page)
+    • MASTER CLASS PAGE: display master classes with each member
+    • MASTER CLASS PAGE: Master class cards show on load
+    • MASTER CLASS PAGE: user can delete member on click
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1. **For each HTML element ask: Why do I need this?**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1. **Think about how to validate each of your features according to a Definition of Done**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## HTML
 
-Additional considerations:
+SEE WIREFRAME
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+## EVENTS
+
+CREATE PAGE
+
+Form
+
+-   input (INSERT member name into member table)
+-   dropdown of master classes (fetch master classes, display them)
+-   submit button redirect to master class page
+
+MASTER CLASS PAGE
+
+-   on load (display master class cards with vocal master and members)
+-   click to delete member (in supabase)
+
+## FUNCTIONS
+
+-   render in display function (renderVocalMaster() rendermembers())
+-   displayMasterclasses()
+-   fetchVocalMasters()
+-   fetchmembers()
+-   deletemember(id)
+-   createmember(name, master)
+
+SUPABASE TABLES
+
+vocal_members
+
+columns: id, name, user_id (LINK auth), master_id (LINK vocal_masters)
+
+vocal_masters: id, name
