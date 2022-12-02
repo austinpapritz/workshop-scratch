@@ -36,7 +36,6 @@ export async function deleteMember(id) {
 
 export async function createMember(member, master) {
     const response = await client.from('vocal_members').insert({ name: member, master_id: master });
-    console.log(response, 'member response');
     return checkError(response);
 }
 
