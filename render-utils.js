@@ -4,9 +4,14 @@ import { deleteMember } from './fetch-utils.js';
 export function renderMasters(master) {
     const divEl = document.createElement('div');
     divEl.classList.add('card');
+    divEl.classList.add(`${master.id}`);
 
-    divEl.addEventListener('click', () => {
-        console.log('click');
+    divEl.addEventListener('mouseover', () => {
+        console.log('hover');
+        // divEl.style.background('url(`../assets/${master.id}.jpg`)');
+        divEl.addEventListener('click', () => {
+            console.log(master.id);
+        });
     });
 
     const genreEl = document.createElement('h2');
