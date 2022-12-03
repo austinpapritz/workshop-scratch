@@ -5,14 +5,20 @@ export function renderMasters(master) {
     const divEl = document.createElement('div');
     divEl.classList.add('card');
 
+    divEl.addEventListener('click', () => {
+        console.log('click');
+    });
+
     const genreEl = document.createElement('h2');
     genreEl.classList.add('genre');
     genreEl.textContent = master.genre;
 
-    const masterH3 = document.createElement('h3');
-    masterH3.textContent = master.name;
+    // const masterH3 = document.createElement('h3');
+    // masterH3.textContent = master.name;
 
-    divEl.append(genreEl, masterH3);
+    // divEl.append(genreEl, masterH3);
+
+    divEl.append(genreEl);
     return divEl;
 }
 

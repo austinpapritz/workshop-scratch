@@ -7,7 +7,7 @@
     --offset-color: rgb(217, 236, 217);
     --action-color: rgb(77, 132, 252);
 
-    --darkpurp: #3c096c;
+    --darkpurp: #240046;
     --medpurp: #5a189a;
     --lightpurp: #7b2cbf;
     --mediumyellow: #fdc500;
@@ -22,9 +22,11 @@ body {
     font-family: var(--primary-font);
     color: var(--text-color);
     /* background: linear-gradient(5deg, var(--darkpurp), var(--mediumyellow)); */
+    background: linear-gradient(45deg, transparent, var(--darkpurp) 50%, var(--mediumyellow) 90%),
+        url('../assets/background.jpg');
     display: grid;
     grid-template-rows: auto 1fr;
-    background: url('../assets/background.jpg') no-repeat;
+    /* background: url('../assets/background.jpg') no-repeat; */
 }
 
 .page-header {
@@ -57,6 +59,7 @@ main {
 }
 
 h1 {
+    color: whitesmoke;
     font-size: 5rem;
 }
 
@@ -76,17 +79,21 @@ h1 {
 }
 
 #cards-container {
-    border: solid black 1px;
+    /* border: solid black 1px; */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding: 1rem;
-    background: linear-gradient(5deg, var(--darkpurp), var(--mediumyellow));
-    box-shadow: 0px 0px 12px var(--darkpurp), 0px 0px 12px var(--darkpurp);
+    /* background: linear-gradient(5deg, var(--darkpurp), var(--mediumyellow)); */
+    /* box-shadow: 0px 0px 12px var(--darkpurp), 0px 0px 12px var(--darkpurp); */
 }
 
 .card {
-    border: solid var(--lightyellow) 1px;
+    cursor: pointer;
+    border: solid var(--lightyellow) 3px;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 75%;
     min-width: 200px;
     margin: 3rem;
     padding-left: 1rem;
@@ -95,6 +102,7 @@ h1 {
 }
 
 .genre {
+    color: whitesmoke;
     text-align: center;
     font-size: 2.5rem;
 }

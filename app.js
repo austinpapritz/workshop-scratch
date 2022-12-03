@@ -17,11 +17,12 @@ export async function displayMasterClasses() {
     for (let masterclass of masterclasses) {
         const masterEl = renderMasters(masterclass);
 
-        for (let member of masterclass.vocal_members) {
-            const memberEl = renderMembers(member);
-            masterEl.append(memberEl);
-            cardsContainer.append(masterEl);
-        }
+        // for (let member of masterclass.vocal_members) {
+        //     const memberEl = renderMembers(member);
+        //     masterEl.append(memberEl);
+        //     cardsContainer.append(masterEl);
+        // }
+        cardsContainer.append(masterEl);
     }
 }
 
