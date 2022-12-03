@@ -27,5 +27,6 @@ form.addEventListener('submit', async (e) => {
 
     await createMember(name, master);
     form.reset();
-    window.location.href = '../';
+    const link = confirm('Go Home?');
+    return link ? (window.location.href = '../') : (window.location.href = '/create');
 });
