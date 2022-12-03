@@ -7,11 +7,11 @@ export function renderMasters(master) {
     divEl.classList.add(`${master.id}`);
 
     divEl.addEventListener('mouseover', () => {
-        divEl.style.background = `url('../assets/${master.id}.png')`;
+        divEl.style.background = `url('./assets/${master.id}.png')`;
         divEl.style.backgroundSize = 'cover';
 
         divEl.addEventListener('click', () => {
-            window.location.replace(`/${master.id}`);
+            window.location.replace(`./detail/?id=${master.id}`);
         });
     });
 
