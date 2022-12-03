@@ -24,9 +24,9 @@ form.addEventListener('submit', async (e) => {
     const data = new FormData(form);
     const name = data.get('member-name');
     const master = data.get('master-id');
+    console.log(master, 'master id');
 
     await createMember(name, master);
     form.reset();
-    const link = confirm('Go Home?');
-    return link ? (window.location.href = '../') : (window.location.href = '/create');
+    window.location.href = `../detail/?id=${master}`;
 });
