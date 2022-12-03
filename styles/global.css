@@ -122,3 +122,49 @@ h1 {
     text-align: center;
     color: whitesmoke;
 }
+
+#member-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#member-form * {
+    margin: 10px;
+}
+
+#member-form label {
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+#member-form input {
+    height: 3rem;
+    width: 30rem;
+    font-size: 2.5rem;
+}
+
+#member-form select {
+    height: 3rem;
+    width: 30rem;
+    font-size: 2.5rem;
+}
+
+#member-form button {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    align-self: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: 5px;
+    border: solid #7b2cbf 5px;
+    background: #7b2cbf;
+    box-shadow: 0 1px 10px var(--mediumyellow), 0 1px 10px var(--mediumyellow);
+}
+
+#member-form button:hover {
+    cursor: pointer;
+    border: solid #fdc500 5px;
+    background: #fdc500;
+    box-shadow: 0 1px 10px var(--lightpurp), 0 1px 10px var(--lightpurp);
+}
