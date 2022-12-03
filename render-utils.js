@@ -9,6 +9,7 @@ export function renderMasters(master) {
     divEl.addEventListener('mouseover', () => {
         divEl.style.background = `url('../assets/${master.id}.png')`;
         divEl.style.backgroundSize = 'cover';
+
         divEl.addEventListener('click', () => {
             window.location.replace(`/${master.id}`);
         });
