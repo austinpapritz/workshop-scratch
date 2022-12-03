@@ -44,6 +44,11 @@ export async function fetchMasters() {
     return checkError(response);
 }
 
+export async function fetchMaster(id) {
+    const response = await client.from('vocal_masters').select('*, vocal_members(*)');
+    return checkError(response);
+}
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
