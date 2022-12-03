@@ -7,11 +7,16 @@ export function renderMasters(master) {
     divEl.classList.add(`${master.id}`);
 
     divEl.addEventListener('mouseover', () => {
-        console.log('hover');
-        // divEl.style.background('url(`../assets/${master.id}.jpg`)');
+        divEl.style.background = `url('../assets/${master.id}.png')`;
+        divEl.style.backgroundSize = 'cover';
         divEl.addEventListener('click', () => {
-            console.log(master.id);
+            window.location.replace(`/${master.id}`);
         });
+    });
+
+    divEl.addEventListener('mouseout', () => {
+        divEl.style.background = '';
+        divEl.style.backgroundSize = '';
     });
 
     const genreEl = document.createElement('h2');
