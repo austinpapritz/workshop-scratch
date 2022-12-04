@@ -9,6 +9,11 @@ export function getUser() {
     return client.auth.user();
 }
 
+export function getUserID() {
+    const user_id = client.auth.user().id;
+    return user_id;
+}
+
 export async function signUpUser(email, password) {
     return await client.auth.signUp({
         email,
@@ -34,8 +39,10 @@ export async function deleteMember(id) {
     return checkError(response);
 }
 
-export async function createMember(member, master) {
-    const response = await client.from('vocal_members').insert({ name: member, master_id: master });
+export async function createMember(member, master, getUserID) {
+    const response = await client
+        .from('vocal_members')
+        .insert({ name: member, master_id: master, user_id: getUserID });
     return checkError(response);
 }
 
