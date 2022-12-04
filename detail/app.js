@@ -1,7 +1,8 @@
 // fetch Masters object with vocal_members
 // send to renderMembers, display
 
-import { fetchMaster } from '../fetch-utils.js';
+import { fetchClassList } from '../fetch-utils.js';
+import { renderMembers } from '../render-utils.js';
 
 /* Get DOM Elements */
 const memberList = document.querySelector('#member-list');
@@ -11,23 +12,18 @@ const memberList = document.querySelector('#member-list');
 
 export async function displayClassList() {
     const param = new URLSearchParams(window.location.search);
-    const id = param.get('id');
+    const master_id = param.get('id');
 
-    const masterObject = await fetchMaster(id);
-    console.log(masterObject, 'single master object');
-
+    const classList = await fetchClassList(master_id);
+    console.log(classList, 'classList object');
     memberList.innerHTML = '';
 
-    // for (let masterclass of masterclasses) {
-    //     const masterEl = renderMasters(masterclass);
+    for (let member of classList) {
+        console.log(member, 'member');
 
-    // for (let member of masterclass.vocal_members) {
-    //     const memberEl = renderMembers(member);
-    //     masterEl.append(memberEl);
-    //     memberList.append(masterEl);
-    // }
-    // memberList.append(masterEl);
-    // }
+        // const memberEl = renderMembers(member);
+        // memberList.append(memberEl);
+    }
 }
 
 window.addEventListener('load', async () => {

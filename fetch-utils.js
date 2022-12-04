@@ -44,8 +44,12 @@ export async function fetchMasters() {
     return checkError(response);
 }
 
-export async function fetchMaster(id) {
-    const response = await client.from('vocal_masters').select('*, vocal_members(*)');
+export async function fetchClassList(master_id) {
+    const response = await client
+        .from('vocal_masters')
+        .select('vocal_members(*)')
+        .match({ id: master_id });
+    console.log(response, 'fetchClassList object');
     return checkError(response);
 }
 
