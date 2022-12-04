@@ -13,16 +13,16 @@ const memberList = document.querySelector('#member-list');
 export async function displayClassList() {
     const param = new URLSearchParams(window.location.search);
     const master_id = param.get('id');
-
-    const classList = await fetchClassList(master_id);
-    console.log(classList, 'classList object');
     memberList.innerHTML = '';
 
-    for (let member of classList) {
+    const classlist = await fetchClassList(master_id);
+    console.log(classlist, 'classList');
+
+    for (let member of classlist.vocal_members) {
         console.log(member, 'member');
 
-        // const memberEl = renderMembers(member);
-        // memberList.append(memberEl);
+        const memberEl = renderMembers(member);
+        memberList.append(memberEl);
     }
 }
 

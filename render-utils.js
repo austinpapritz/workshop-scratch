@@ -39,10 +39,10 @@ export function renderMembers(member) {
     const memberP = document.createElement('p');
     memberP.textContent = member.name;
 
-    memberP.addEventListener('click', async () => {
-        await deleteMember(member.id);
-        displayMasterClasses();
-    });
+    // memberP.addEventListener('click', async () => {
+    //     await deleteMember(member.id);
+    //     displayMasterClasses();
+    // });
 
     memberDiv.append(memberP);
     return memberDiv;

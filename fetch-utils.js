@@ -49,7 +49,7 @@ export async function fetchClassList(master_id) {
         .from('vocal_masters')
         .select('vocal_members(*)')
         .match({ id: master_id });
-    console.log(response, 'fetchClassList object');
+
     return checkError(response);
 }
 

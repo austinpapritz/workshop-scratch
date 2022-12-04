@@ -12,6 +12,7 @@ const cardsContainer = document.querySelector('#cards-container');
 
 export async function displayMasterClasses() {
     const masterclasses = await fetchMasters();
+
     cardsContainer.innerHTML = '';
 
     for (let masterclass of masterclasses) {
