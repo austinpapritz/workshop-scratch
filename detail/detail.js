@@ -36,52 +36,8 @@ export async function displayClassList() {
     memberList.innerHTML = '';
 
     const classlist = await fetchClassList(master_id);
-    //{…}] CONSOLE LOG BELOW RETURNS OBJECT WITH AN ARRAY OF MASTERCLASSES
-    // 0
-    // :
-    // vocal_members
-    // :
-    // Array(4)
-    // 0
-    // :
-    // {id: 6, name: 'Juju', user_id: null, master_id: 2}
-    // 1
-    // :
-    // {id: 15, name: 'Austin', user_id: null, master_id: 2}
-    // 2
-    // :
-    // {id: 22, name: 'Clara', user_id: null, master_id: 2}
-    // 3
-    // :
-    // {id: 23, name: 'Yodi', user_id: null, master_id: 2}
-    // length
-    // :
-    // 4
-    console.log(classlist, 'classList');
-    for (let member of classlist) {
-        //the console log below returns ANOTHER object with an array?
-        //IF I LOOP classlist.vocal_members IT SAYS IT IS NOT ITERABLE
-        //IF I LOOP ITEM OF MEMBER THEN IT ALSO SAYS IT IS NOT ITERABLE
-        //{vocal_members: Array(4)}
-        //vocal_members;
-        // :
-        // Array(4)
-        // 0
-        // :
-        // {id: 6, name: 'Juju', user_id: null, master_id: 2}
-        // 1
-        // :
-        // {id: 15, name: 'Austin', user_id: null, master_id: 2}
-        // 2
-        // :
-        // {id: 22, name: 'Clara', user_id: null, master_id: 2}
-        // 3
-        // :
-        // {id: 23, name: 'Yodi', user_id: null, master_id: 2}
-        // length
-        // :
-        // 4
-        console.log(member, 'member');
+
+    for (let member of classlist.vocal_members) {
         const memberEl = renderMembers(member);
         memberList.append(memberEl);
     }
