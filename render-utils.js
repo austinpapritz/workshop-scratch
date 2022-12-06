@@ -38,6 +38,7 @@ export function renderMembers(member) {
 
     const memberP = document.createElement('p');
     memberP.textContent = member.name;
+    memberP.classList.add('classlist');
 
     // memberP.addEventListener('click', async () => {
     //     await deleteMember(member.id);

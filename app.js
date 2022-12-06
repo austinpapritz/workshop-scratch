@@ -2,7 +2,7 @@
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import { fetchMasters } from './fetch-utils.js';
-import { renderMasters, renderMembers } from './render-utils.js';
+import { renderMasters } from './render-utils.js';
 
 /* Get DOM Elements */
 const cardsContainer = document.querySelector('#cards-container');

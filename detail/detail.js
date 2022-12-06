@@ -37,7 +37,7 @@ export async function displayClassList() {
 
     const classlist = await fetchClassList(master_id);
 
-    for (let member of classlist.vocal_members) {
+    for (let member of classlist[master_id - 1].vocal_members) {
         const memberEl = renderMembers(member);
         memberList.append(memberEl);
     }
